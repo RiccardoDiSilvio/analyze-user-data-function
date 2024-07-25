@@ -3,7 +3,6 @@ from model import Analysis
 from langchain_anthropic import ChatAnthropic
 
 def lambda_handler(event, context): 
-    os.environ['ANTHROPIC_API_KEY'] = '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'
     model = ChatAnthropic(model="claude-3-haiku-20240307", temperature=0)
     structured_llm = model.with_structured_output(Analysis)
     return  structured_llm.invoke(f"""
