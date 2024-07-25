@@ -12,7 +12,7 @@ phases:
       - echo Build started on `date`
       - docker build -t analyze-user-data-function .
       - export IMAGE_TAG=$(date +%s | sha256sum | base64 | head -c 8)
-      - echo "Using image tag: $IMAGE_TAG"
+      - echo $IMAGE_TAG
       - $(aws ecr get-login --no-include-email --region us-east-2)
       - docker tag analyze-user-data-function:latest 637423352927.dkr.ecr.us-east-2.amazonaws.com/analyze-user-data-function:$IMAGE_TAG
       - docker push 637423352927.dkr.ecr.us-east-2.amazonaws.com/analyze-user-data-function:$IMAGE_TAG
