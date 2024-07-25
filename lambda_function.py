@@ -9,7 +9,7 @@ def lambda_handler(event, context):
             I'm going to give you a buyer persona and a lot of data from LinkedIn about a user.
             I want you to analyze whether the user matches the buyer persona and why.
             Be very strict in following the buyer persona, and take into account when the person had experience in their roles
-            Be detailed but concise in your explanation.
+            Be concise in your explanation (Less than 100 words)
             This is the buyer persona: {event["buyer_persona"]} 
             And this is the user data: {event["user_data"]}
                         """).dict()
